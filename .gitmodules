@@ -1,0 +1,6 @@
+[submodule "nvim"]
+	path = nvim
+	url = https://github.com/MichalZaawada/nvim
+[submodule "wezterm"]
+	path = wezterm
+	url = https://github.com/MichalZaawada/wezterm
