@@ -7,7 +7,7 @@ This repository contains my personal dotfiles and installation scripts for my de
 Linux
 
 ```bash
-git clone https://github.com/MichalZaawada/.dotfiles.git ~/.dotfiles
+git clone https://github.com/MichalZaawada/.dotfiles ~/.dotfiles
 cd ~/.dotfiles
 ./install.sh
 ```
@@ -15,7 +15,7 @@ cd ~/.dotfiles
 Windows
 
 ```powershell
-git clone https://github.com/MichalZaawada/.dotfiles.git ~/.dotfiles
+git clone https://github.com/MichalZaawada/.dotfiles ~/.dotfiles
 cd $HOME\.dotfiles
 ./install.ps1
 ```
