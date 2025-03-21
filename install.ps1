@@ -49,4 +49,20 @@ Install-ConfigLink `
 	-Name "Neovim" `
 	-LinkType "Junction"
 
+Install-ConfigLink `
+	-Path "$HOME\.glzr\glazewm" `
+	-Target "$Current_Path\glazewm\" `
+	-Name "GlazeWM" `
+	-LinkType "Junction"
 
+Install-ConfigLink `
+	-Path "$HOME\AppData\Roaming\Zed\keymap.json" `
+	-Target "$Current_Path\zed\keymap.json" `
+	-Name "Zed keymap.json" `
+	-LinkType "SymbolicLink"
+
+Install-ConfigLink `
+	-Path "$HOME\AppData\Roaming\Zed\settings.json" `
+	-Target "$Current_Path\zed\settings.json" `
+	-Name "Zed settings.json" `
+	-LinkType "SymbolicLink"
