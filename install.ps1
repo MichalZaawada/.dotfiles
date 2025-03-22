@@ -56,6 +56,12 @@ Install-ConfigLink `
 	-LinkType "Junction"
 
 Install-ConfigLink `
+	-Path "$HOME\AppData\Roaming\Zed\themes" `
+	-Target "$Current_Path\zed\themes\" `
+	-Name "Zed themes" `
+	-LinkType "Junction"
+
+Install-ConfigLink `
 	-Path "$HOME\AppData\Roaming\Zed\keymap.json" `
 	-Target "$Current_Path\zed\keymap.json" `
 	-Name "Zed keymap.json" `
