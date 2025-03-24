@@ -55,6 +55,14 @@
       // Put key bindings here (in addition to the context above) if you want them to
       // work when no editor exists.
       // "space f": "file_finder::Toggle"
+      // search
+      "space s f": "file_finder::Toggle",
+      "space s a": "command_palette::Toggle",
+      "space s g": "workspace::NewSearch",
+      // toggle
+      "space t e": "workspace::ToggleLeftDock",
+      "space t t": "terminal_panel::ToggleFocus",
+      "space t c": "assistant::ToggleFocus"
     }
   },
   {
