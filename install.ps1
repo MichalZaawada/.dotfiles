@@ -30,6 +30,14 @@ if (-not (Get-Command scoop -ErrorAction SilentlyContinue))
 {
 	Write-Host "=> Scoop was installed..."
 }
+ 
+
+$scoopApps = @("wezterm", "neovim-nightly", "glazewm", "zed", "zig", "starship", "zebar", "lazygit")
+foreach ($app in $scoopApps) {
+	Write-Host "=> Installing $app..."
+	scoop install $app
+}
+
 
 Install-ConfigLink `
 	-Path "$HOME\Documents\PowerShell\Profile.ps1" `
@@ -47,12 +55,6 @@ Install-ConfigLink `
 	-Path "$HOME\AppData\Local\nvim" `
 	-Target "$Current_Path\nvim\" `
 	-Name "Neovim" `
-	-LinkType "Junction"
-
-Install-ConfigLink `
-	-Path "$HOME\.glzr\glazewm" `
-	-Target "$Current_Path\glazewm\" `
-	-Name "GlazeWM" `
 	-LinkType "Junction"
 
 Install-ConfigLink `
