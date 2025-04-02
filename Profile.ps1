@@ -1,9 +1,9 @@
 Import-Module -Name Terminal-Icons
 Set-PSReadLineOption -PredictionViewStyle ListView
-Invoke-Expression (&starship init powershell)
+
 Set-Alias lg lazygit
 
-
+Invoke-Expression (&starship init powershell)
 $ENV:STARSHIP_CONFIG = "$HOME\.config\starship\starship.toml"
 
 $ExecutionContext.InvokeCommand.PreCommandLookupAction = {
@@ -45,11 +45,3 @@ function prompt
     $host.UI.RawUI.WindowTitle = $currentFolder
     & $oldPrompt
 }
-
-function npm
-{
-    $host.ui.RawUI.WindowTitle = "npm"
-    & "npm.cmd" $args
-    $host.ui.RawUI.WindowTitle = "npm"
-}
-
