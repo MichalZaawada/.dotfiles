@@ -2,6 +2,7 @@ Import-Module -Name Terminal-Icons
 Set-PSReadLineOption -PredictionViewStyle ListView
 
 Set-Alias lg lazygit
+Set-Alias vi nvim
 
 Invoke-Expression (&starship init powershell)
 $ENV:STARSHIP_CONFIG = "$HOME\.config\starship\starship.toml"
