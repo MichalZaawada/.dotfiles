@@ -32,7 +32,7 @@ if (-not (Get-Command scoop -ErrorAction SilentlyContinue))
 }
  
 
-$scoopApps = @("wezterm", "neovim-nightly", "glazewm", "zed", "zig", "starship", "zebar", "lazygit")
+$scoopApps = @("wezterm", "neovim-nightly", "glazewm", "zed", "zig", "starship", "zebar", "lazygit", "flow-launcher")
 foreach ($app in $scoopApps) {
 	Write-Host "=> Installing $app..."
 	scoop install $app
@@ -65,9 +65,15 @@ Install-ConfigLink `
 
 Install-ConfigLink `
 	-Path "$HOME\.glzr\zebar\overline-zebar" `
-	-Target "$Current_Path\zebar\overline-zebar " `
+	-Target "$Current_Path\.glzr\zebar\overline-zebar" `
 	-Name "Zebar themes" `
 	-LinkType "Junction"
+
+Install-ConfigLink `
+	-Path "$HOME\.glzr\glazewm\config.yaml" `
+	-Target "$Current_Path\.glzr\glazewm\config.yaml" `
+	-Name "GlazeWm config" `
+	-LinkType "SymbolicLink"
 
 Install-ConfigLink `
 	-Path "$HOME\AppData\Roaming\Zed\keymap.json" `
