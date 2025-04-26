@@ -64,6 +64,12 @@ Install-ConfigLink `
 	-LinkType "Junction"
 
 Install-ConfigLink `
+	-Path "$HOME\.glzr\zebar\overline-zebar" `
+	-Target "$Current_Path\zebar\overline-zebar " `
+	-Name "Zebar themes" `
+	-LinkType "Junction"
+
+Install-ConfigLink `
 	-Path "$HOME\AppData\Roaming\Zed\keymap.json" `
 	-Target "$Current_Path\zed\keymap.json" `
 	-Name "Zed keymap.json" `
