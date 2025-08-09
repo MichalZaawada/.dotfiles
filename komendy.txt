@@ -1,0 +1,9 @@
+-- muzyka pacmd
+pacmd list-sinks | sed -n -e '/*/,$!d' -e '/index/p' -e '/base volume/d' -e '/volume:/p' -e '/muted:/p' -e '/device\\.string/p'
+
+-- bateria
+upower -i $(upower -e | grep 'BAT1')
+upower -i $(upower -e | grep 'BAT') | grep -E "state|to\ full|percentage" 
+
+-- Ekran
+-- Zeby dock dzialal trzeba zakomentowac w doku cd /etc/X11/xorg.conf.d/xorg.conf konfiguracje. Dzieki niej dziala zmiana podswietlenia ekranu :) 

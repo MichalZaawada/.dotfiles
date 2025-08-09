@@ -1,0 +1,98 @@
+arandr 0.1.10-1.1 [Ubuntu/jammy universe]
+├── is installed
+└── Simple visual front end for XRandR
+
+dotnet8 8.0.108-8.0.8-0ubuntu1~22.04.1 [Ubuntu/jammy main]
+├── is installed and upgradable to 8.0.110-8.0.10-0ubuntu1~22.04.1
+└── .NET CLI tools and runtime
+
+fzf 0.29.0-1 [Ubuntu/jammy universe]
+├── is installed and upgradable to 0.29.0-1ubuntu0.1
+└── general-purpose command-line fuzzy finder
+
+gnome-colors 5.5.1-2.1 [Ubuntu/jammy universe]
+└── set of GNOME icon themes
+
+gpick 0.2.6-1 [Ubuntu/jammy universe]
+├── is installed
+└── advanced GTK+ color picker
+
+htop 3.0.5-7build2 [Ubuntu/jammy main]
+├── is installed
+└── interactive processes viewer
+
+i3lock 2.13-1 [Ubuntu/jammy universe]
+└── improved screen locker
+
+latexmk 1:4.76-1 [Ubuntu/jammy universe]
+├── is installed
+└── Perl script for running LaTeX the correct number of times
+
+libreadline-dev 8.1.2-1 [Ubuntu/jammy main]
+├── is installed
+└── GNU readline and history libraries, development files
+
+mpc 0.34-1 [Ubuntu/jammy universe]
+├── is installed
+└── command-line tool to interface MPD
+
+mpd 0.23.5-1build7 [Ubuntu/jammy universe]
+├── is installed
+└── Music Player Daemon
+
+nitrogen 1.6.1-2build1 [Ubuntu/jammy universe]
+├── is installed
+└── wallpaper browser and changing utility for X
+
+pavucontrol 5.0-2 [Ubuntu/jammy universe]
+├── is installed
+└── PulseAudio Volume Control
+
+picom 9-1 [Ubuntu/jammy universe]
+├── is installed
+└── lightweight compositor for X11
+
+ripgrep 13.0.0-2ubuntu0.1 [Ubuntu/jammy universe]
+├── is installed
+└── Recursively searches directories for a regex pattern
+
+scrot 1.7-1 [Ubuntu/jammy universe]
+├── is installed
+└── command line screen capture utility
+
+suckless-tools 46-1 [Ubuntu/jammy universe]
+├── is installed
+└── simple commands for minimalistic window managers
+
+texlive-lang-polish 2021.20220204-1 [Ubuntu/jammy universe]
+├── is installed
+└── TeX Live: Polish
+
+texlive-latex-extra 2021.20220204-1 [Ubuntu/jammy universe]
+├── is installed
+└── TeX Live: LaTeX additional packages
+
+tlp 1.5.0-1ubuntu3 [Ubuntu/jammy main]
+├── is installed
+└── Optimize laptop battery life
+
+unclutter 8-25 [Ubuntu/jammy universe]
+├── is installed
+└── hides the mouse cursor in X after a period of inactivity
+
+xbacklight 1.2.1-1build2 [Ubuntu/jammy universe]
+├── is installed
+└── simple utility to set the backlight level
+
+xfce4-power-manager 4.18.1-1~bpo22.04mint1 [linuxmint/virginia upstream]
+├── is installed
+└── power manager for Xfce desktop
+
+xscreensaver 5.45+dfsg1-2ubuntu1 [Ubuntu/jammy universe]
+├── is installed
+└── Screensaver daemon and frontend for X11
+
+xsel 1.2.0+git9bfc13d.20180109-3 [Ubuntu/jammy universe]
+├── is installed
+└── command-line tool to access X clipboard and selection buffers
+
