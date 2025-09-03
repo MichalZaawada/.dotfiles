@@ -1,0 +1,95 @@
+/*
+ * ROFI color theme
+ *
+ * Based on Something Found in the Internet
+ *
+ * User: Contributors
+ * Copyright: *!
+ */
+@theme "/dev/null"
+
+configuration {
+  font: "Iosevka Nerd Font Medium 12";
+
+  drun {
+    display-name: "";
+  }
+
+  run {
+    display-name: "";
+  }
+
+  window {
+    display-name: "";
+  }
+
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  bg: rgb(30, 34, 40);
+  bg-alt: rgb(9, 11, 15);
+  fg: rgb(237, 238, 240);
+  fg-alt: rgb(202, 206, 212);
+  border: rgb(53, 59, 69);
+
+  background-color: @bg;
+  text-color: @fg-alt;
+}
+
+window {
+  border: 2px;
+  border-color: @border;
+  padding: 6px;
+  transparency: "real";
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+prompt {
+  background-color: inherit;
+  padding: 10px;
+}
+
+entry {
+  padding: 10px;
+}
+
+listview {
+  lines: 10;
+  scrollbar: true;
+}
+
+scrollbar {
+  background-color: @bg-alt;
+  handle-color: @fg;
+  margin: 0 0 0 6px;
+}
+
+element {
+  children: [element-text];
+  background-color: @bg;
+}
+
+element-text {
+  padding: 10px;
+}
+
+element-text selected {
+  background-color: @bg-alt;
+  text-color: @fg;
+}

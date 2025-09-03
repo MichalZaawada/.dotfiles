@@ -1,0 +1,295 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1910, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    "margin-top": 2,
+    "margin-bottom": 0,
+    "margin-left": 5,
+    "margin-right": 5,
+    "modules-left": [
+        "custom/search",
+        "sway/workspaces",
+        "sway/mode",
+        "sway/scratchpad",
+        "custom/media"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "network",
+        "group/group-audio",
+        "backlight",
+        "group/group-battery",
+        "tray",
+        "group/group-utils",
+        "clock",
+        "group/group-power"
+    ],
+    // Modules configuration
+    // "sway/workspaces": {
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "warp-on-scroll": false,
+    //     "format": "{name}: {icon}",
+    //     "format-icons": {
+    //         "1": "",
+    //         "2": "",
+    //         "3": "",
+    //         "4": "",
+    //         "5": "",
+    //         "urgent": "",
+    //         "focused": "",
+    //         "default": ""
+    //     }
+    // },
+    "custom/search": {
+        "format": "",
+        "on-click": "rofi -show drun",
+        "tooltip": true,
+        "tooltip-format": "Search",
+    },
+    "sway/workspaces": {
+         "disable-scroll": true,
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    // "mpd": {
+    //     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    //     "format-disconnected": "Disconnected ",
+    //     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+    //     "unknown-tag": "N/A",
+    //     "interval": 5,
+    //     "consume-icons": {
+    //         "on": " "
+    //     },
+    //     "random-icons": {
+    //         "off": "<span color=\"#f53c3c\"></span> ",
+    //         "on": " "
+    //     },
+    //     "repeat-icons": {
+    //         "on": " "
+    //     },
+    //     "single-icons": {
+    //         "on": "1 "
+    //     },
+    //     "state-icons": {
+    //         "paused": "",
+    //         "playing": ""
+    //     },
+    //     "tooltip-format": "MPD (connected)",
+    //     "tooltip-format-disconnected": "MPD (disconnected)"
+    // },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "min-length": 7,
+        "max-length": 7,
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "⚠",
+        "on-click": "~/.dotfiles/rofi/rofi-scripts/wifi/rofi-wifi-menu.sh"
+    },
+    "group/group-audio": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider",
+        ]
+    },
+    "pulseaudio": {
+        "min-length": 7,
+        "max-length": 7,
+        // "scroll-step": 1, // %, can be a float
+        // "format": "{volume}% {icon} {format_source}",
+        "format": "{icon}  {volume}%",
+        // "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{icon} {volume}%",
+        // "format-bluetooth-muted": " {icon} {format_source}",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": " {volume}%",
+        // "format-source": "{volume}% ",
+        // "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "min-length": 6,
+        "max-length": 6,
+        "tooltip": false,
+        "format": "{icon}  {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-click": "brightnessctl set 5%+",
+        "on-click-right": "brightnessctl set 5%-"
+        // "format-icons": ["", "", ""]
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        // "format": "{:%H:%M} <U+F017> ",
+        "format": " {:%a %d %b %R} ",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        // "format-alt": "{:%Y-%m-%d}"
+    },
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "/usr/share/waybar/custom_modules/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+  //   "custom/power": {
+  //       "format" : "⏻ ",
+		// "tooltip": false,
+		// "menu": "on-click",
+		// "menu-file": "/usr/share/waybar/custom_modules/power_menu.xml", // Menu file in resources folder
+		// "menu-actions": {
+		// 	"shutdown": "systemctl poweroff",
+		// 	"reboot": "reboot",
+		// 	"suspend": "systemctl suspend",
+		// 	"hibernate": "systemctl hibernate"
+		// }
+  //   },
+
+    "group/group-utils": {
+        "orientation": "horizontal",
+        "modules": [
+            "cpu", // First element is the "group leader" and won't ever be hidden
+            "memory",
+        ]
+    },
+    "cpu": {
+        "format": "CPU {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "RAM {}%"
+    },
+    "group/group-battery": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "battery",
+            "battery#bat0",
+            "battery#bat1",
+        ]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat0": {
+        "bat": "BAT0",
+        "format": "BAT0 {capacity}% {icon}",
+        "format-charging": "BAT0 {capacity}% ",
+        "format-plugged": "BAT0 {capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat1": {
+        "bat": "BAT1",
+        "format": "BAT1 {capacity}% {icon}",
+        "format-charging": "BAT1 {capacity}% ",
+        "format-plugged": "BAT1 {capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "group/group-power": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+        "modules": [
+            "custom/power", // First element is the "group leader" and won't ever be hidden
+            "custom/quit",
+            "custom/lock",
+            "custom/reboot",
+        ]
+    },
+    "custom/quit": {
+        "format": " 󰗼 ",
+        "tooltip": true,
+        "tooltip-format": "Quit",
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": " 󰍁 ",
+        "tooltip": true,
+        "tooltip-format": "Lock",
+        "on-click": "swaylock"
+    },
+    "custom/reboot": {
+        "format": " 󰜉 ",
+        "tooltip": true,
+        "tooltip-format": "Reboot",
+        "on-click": "systemctl reboot"
+    },
+    "custom/power": {
+        "format": "  ",
+        "tooltip": true,
+        "tooltip-format": "Power",
+        "on-click": "systemctl poweroff"
+    }
+},

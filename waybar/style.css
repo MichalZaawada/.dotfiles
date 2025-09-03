@@ -1,0 +1,346 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+@define-color bg-color rgb(30, 34, 40);
+@define-color alt-bg-color rgb(9, 11, 15);
+@define-color border-color rgb(53, 59, 69);
+@define-color button-border-color rgb(229, 231, 235);
+@define-color mutted-text-color rgb(202, 206, 212);
+@define-color text-color rgb(237, 238, 240);
+
+window#waybar {
+    /* border-radius: 0.75rem; */
+    background-color: @bg-color;
+    border: 2px solid @border-color;
+    color: @text-color;
+    transition-property: color;
+    transition-duration: .2s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/*
+window#waybar.empty {
+    background-color: transparent;
+}
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+window#waybar.termite {
+
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    /* box-shadow: inset 0 -3px transparent; */
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+}
+
+
+
+#mode {
+    background-color: #64727D;
+    /* box-shadow: inset 0 -3px #ffffff; */
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#backlight,
+#network,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#quit,
+#mpd {
+    padding: 0 6px;
+    color: @text-color;
+}
+
+#window {
+    padding: 0 0px;
+}
+
+#custom-search {
+    margin: 4px 0px 5px 8px;
+    padding: 0px 8px;
+    border-radius: 0.75rem;
+    background-color: @alt-bg-color;
+    border: 1px solid @border-color;
+    color: @mutted-text-color;
+    transition: all 0.3s ease;
+}
+
+#custom-search:hover {
+    color: @text-color;
+    background-color: #64727d;
+}
+
+#workspaces {
+    margin: 5px 16px 5px 0px;
+    border-radius: 1.25rem;
+    background-color: @alt-bg-color;
+    border: 1px solid @border-color;
+    color: @mutted-text-color;
+}
+
+#workspaces button {
+    border-radius: 1.25rem;
+    padding: 0px 6px;
+    margin: 1px 1px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+#workspaces button:hover {
+    color: @text-color;
+}
+
+#workspaces button.focused {
+    background-color: #64727d;
+    color: @text-color;
+    border-color: @button-border-color;
+}
+
+#idle_inhibitor {
+    color: @mutted-text-color;
+    transition: all 0.5s ease;
+}
+
+#idle_inhibitor:hover,
+#idle_inhibitor.activated {
+    color: @text-color;
+}
+
+#network {
+    color: @text-color;
+}
+
+#network.disconnected {
+    color: red;
+}
+
+#backlight,
+#group-audio {
+    margin: 3px 0px;
+    padding: 0px 6px;
+    border-radius: 1.25rem;
+    background-color: @alt-bg-color;
+    border: 1px solid @border-color;
+    color: @text-color;
+}
+
+
+#pulseaudio.muted {}
+
+#pulseaudio:hover {
+    transition: all 0.3s ease;
+    border-color: @button-border-color;
+}
+
+#pulseaudio-slider {
+    padding: 0;
+    margin: 0;
+    padding-right: 6px;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+    min-height: 10px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+#pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: @text-color;
+}
+
+#group-battery,
+#group-utils {
+    margin: 3px 0px;
+    padding: 0px 6px;
+    border-radius: 1.25rem;
+    background-color: @alt-bg-color;
+    border: 1px solid @border-color;
+    color: @mutted-text-color;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #26A65B;
+}
+
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#clock {
+    margin: 3px 0px;
+    color: @text-color;
+}
+
+#group-power {
+    margin: 3px 8px 3px 0px;
+    padding: 0px 6px;
+    border-radius: 1.25rem;
+    background-color: @alt-bg-color;
+    border: 1px solid @border-color;
+    color: @mutted-text-color;
+    transition: all 0.3s ease;
+}
+
+#group-power:hover {
+    color: @text-color;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+/* .modules-left>widget:first-child>#workspaces { */
+/*     margin-left: 0; */
+/* } */
+
+
+
+
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+
+label:focus {
+    background-color: #000000;
+}
+
+
+#disk {
+    background-color: #964B00;
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+
+#tray {
+    background-color: #2980b9;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+    background-color: transparent;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    background-color: #cf5700;
+}
+
+#privacy-item.audio-in {
+    background-color: #1ca000;
+}
+
+#privacy-item.audio-out {
+    background-color: #0069d4;
+}
