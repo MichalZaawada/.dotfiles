@@ -2,6 +2,11 @@
 
 This repository contains my personal dotfiles and installation scripts for my development environment.
 
+# Linux preview
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fb620713-f491-4511-8cb6-e6712a83d241" />
+
+
 ## ⚡️ Quick Install
 
 Linux
