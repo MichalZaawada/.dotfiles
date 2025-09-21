@@ -11,6 +11,8 @@
 configuration {
   font: "Iosevka Nerd Font Medium 12";
 
+  terminal: "wezterm";
+
   drun {
     display-name: "";
   }

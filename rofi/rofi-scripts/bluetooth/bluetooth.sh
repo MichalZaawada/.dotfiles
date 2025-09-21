@@ -14,12 +14,11 @@
 # Thanks to x70b1 (https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/system-bluetooth-bluetoothctl)
 #
 # Depends on:
-#   Arch repositories: rofi, bluez-utils (contains bluetoothctl)
+#   Arch repositories: rofi, bluez-utils (contains bluetoothctl), bc
 
 # Constants
 divider="---------"
 goback="Back"
-dir="$HOME/.config/rofi"
 
 # Checks if bluetooth controller is powered on
 power_on() {
@@ -58,13 +57,12 @@ scan_on() {
 # Toggles scanning state
 toggle_scan() {
     if scan_on; then
-        kill $(pgrep -f "bluetoothctl scan on")
+        kill $(pgrep -f "bluetoothctl --timeout 5 scan on")
         bluetoothctl scan off
         show_menu
     else
-        bluetoothctl scan on &
+        bluetoothctl --timeout 5 scan on
         echo "Scanning..."
-        sleep 5
         show_menu
     fi
 }
@@ -306,7 +304,7 @@ show_menu() {
 }
 
 # Rofi command to pipe into, can add any options here
-rofi_command="rofi -dmenu $* -p "󰂯" "
+rofi_command="rofi -dmenu $* -p"
 
 case "$1" in
     --status)

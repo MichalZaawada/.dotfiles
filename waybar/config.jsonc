@@ -290,6 +290,6 @@
         "format": "  ",
         "tooltip": true,
         "tooltip-format": "Power",
-        "on-click": "systemctl poweroff"
+        "on-click": "~/.dotfiles/rofi/rofi-scripts/power-manager/script.sh"
     }
 },

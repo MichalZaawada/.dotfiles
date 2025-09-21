@@ -32,7 +32,10 @@ else
 	else
 		if [[ "$chosen_network" =~ "" ]]; then
 			wifi_password=$(rofi -dmenu -p "Password: " )
+			if ["$wifi_password" = ""]; then
+				exit
+			fi 
 		fi
 		nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && notify-send "Connection Established" "$success_message"
-    fi
+	fi
 fi

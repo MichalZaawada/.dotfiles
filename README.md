@@ -2,10 +2,9 @@
 
 This repository contains my personal dotfiles and installation scripts for my development environment.
 
-# Linux preview
+# 🐧 Linux preview
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fb620713-f491-4511-8cb6-e6712a83d241" />
-
+<img width="1920" height="1080" alt="image" style="margin-bottom: 20px;" src="https://github.com/user-attachments/assets/fb620713-f491-4511-8cb6-e6712a83d241" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f0f40a2c-cef2-4e5e-92d2-868127e3f3b9" />
 
 
@@ -32,6 +31,15 @@ cd $HOME\.dotfiles
 - Neovim config
 - Wezterm config
 - Install script for Win (install.ps1) and Linux (install.sh)
+
+### Linux
+
+- Rofi config with custom scripts
+- Waybar config (inspired by [overline-zebar](https://github.com/mushfikurr/overline-zebar))
+- LSD config
+- Sway config
+
+### Windows
 
 ## 🛠 Prerequisites
 
